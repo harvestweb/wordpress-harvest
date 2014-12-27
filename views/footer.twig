@@ -1,0 +1,13 @@
+<footer>
+  Copyright {{"now"|date('Y')}}
+</footer>
+
+{% if environment() == 'development' %}
+
+  <script data-main="src/js/script" src="{{site.theme.link}}/gemini/src/bower_components/requirejs/require.js"></script>
+
+{% else %}
+
+  <script src="{{site.theme.link}}/gemini/dist/js/script.js"></script>
+
+{% endif %}

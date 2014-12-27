@@ -1,0 +1,6 @@
+{
+  "name": "Gemini Boilerplate",
+  "dependencies": {
+    "gemini": "latest"
+  }
+}

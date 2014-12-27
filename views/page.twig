@@ -1,0 +1,18 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  <div>
+    <article data-post-type="{{post.post_type}}" data-post-id="{{post.ID}}">
+      <section>
+        <h1>{{post.title}}</h1>
+
+        <div>
+          {{post.content}}
+        </div>
+      </section>
+
+    </article>
+  </div> <!-- /content-wrapper -->
+
+{% endblock %}
