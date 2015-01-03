@@ -1,42 +1,23 @@
 {% block html_head_container %}
-{% include 'html-header.twig' %}
+{% include 'head.twig' %}
   {% block head %}
   {% endblock %}
 {% endblock %}
   <body class="{{body_class}}">
-    <header>
-      {% block header %}
-      <div>
-
-        <h1 role="banner">
-          <a href="/" title="{{site.name}}" rel="home">{{site.name}}</a>
-        </h1>
-        <nav role="navigation">
-          <ul>
-          {% for item in menu.items %}
-            <li data-menu-item-id="{{item.ID}}"
-              data-menu-item-type="{{item.type}}"
-              data-menu-item-object="{{item.object}}">
-              <a href="{{item.link}}">{{item.title}}</a>
-            </li>
-          {% endfor %}
-          </ul>
-        </nav><!-- #access -->
-
-      </div>
-      {% endblock %}
-    </header>
+    {% block header %}
+      {% include 'header.twig' %}
+    {% endblock %}
 
 
-    <section role="main">
+    <section role="main" class="l-row">
       {% if title %}<h1>{{title}}</h1>{% endif %}
-      <div class="{{sidebar_class}}">
+      <div class="{{ sidebar ? 'l-column--8' : 'l-column' }}">
         {% block content %}
           Sorry, no content
         {% endblock %}
       </div>
       {% if sidebar %}
-        <aside>
+        <aside class="{{sidebar_class}} l-column--4">
           {{sidebar}}
         </aside>
       {% endif %}
