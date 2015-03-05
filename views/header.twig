@@ -1,18 +1,20 @@
-<header class="l-row">
-  <div class="l-column">
-    <h1 role="banner">
-      <a href="/" title="{{site.name}}" rel="home">{{site.name}}</a>
-    </h1>
-    <nav role="navigation">
-      <ul class="nav">
-      {% for item in menu.items %}
-        <li data-menu-item-id="{{item.ID}}"
-            data-menu-item-type="{{item.type}}"
-            data-menu-item-object="{{item.object}}">
-          <a href="{{item.link}}">{{item.title}}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    </nav><!-- #access -->
+<header class="box box--shadow rule rule--secondary">
+  <div class="l-row">
+    <div class="l-column">
+      <h1 role="banner">
+        <a href="/" title="{{site.name}}" rel="home">{{site.name}}</a>
+      </h1>
+      <nav role="navigation">
+        <ul class="nav nav--spaced">
+        {% for item in menu.items %}
+          <li data-menu-item-id="{{item.ID}}"
+              data-menu-item-type="{{item.type}}"
+              data-menu-item-object="{{item.object}}">
+            <a href="{{item.link}}">{{item.title}}</a>
+          </li>
+        {% endfor %}
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>
