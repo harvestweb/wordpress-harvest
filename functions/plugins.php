@@ -24,6 +24,22 @@ function harvest_register_required_plugins() {
       'version'            => '0.20.8', // E.g. 1.0.0. If set, the active plugin must be this version or higher.
       'force_activation'   => true, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
       'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
+    ),
+    array(
+      'name'               => 'Post Type Archive Link',
+      'slug'               => 'post-type-archive-links',
+      'required'           => true,
+      'version'            => '1.3.0',
+      'force_activation'   => true,
+      'force_deactivation' => false,
+    ),
+    array(
+      'name'               => 'Advanced Custom Fields',
+      'slug'               => 'advanced-custom-fields',
+      'required'           => true,
+      'version'            => '4.3.9',
+      'force_activation'   => true,
+      'force_deactivation' => false,
     )
   );
 

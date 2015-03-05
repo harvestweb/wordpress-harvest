@@ -6,7 +6,7 @@
 
 {% if environment() == 'development' %}
 
-  <script data-main="src/js/script" src="{{site.theme.link}}/gemini/src/bower_components/requirejs/require.js"></script>
+  <script data-main="{{site.theme.path}}/gemini/src/js/script" src="{{site.theme.link}}/gemini/src/bower_components/requirejs/require.js"></script>
 
 {% else %}
 

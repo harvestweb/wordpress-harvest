@@ -1,0 +1,40 @@
+{% extends "base.twig" %}
+
+{% block content %}
+  <div>
+    <article data-post-id="{{post.ID}}" data-post-type="{{post.post_type}}">
+      <section>
+        <h1>{{post.title}}</h1>
+
+        <div id="dark">
+          <div class="mejs-audio-wrapper mejs-green">
+            <audio src="{{ post.get_field('audio').url }}"></audio>
+          </div>
+        </div>
+
+        <p>
+          <span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.post_date|date}}
+        </p>
+
+        <div>
+          {{post.content}}
+        </div>
+      </section>
+
+      <section>
+        <div>
+          <h3>Comments</h3>
+          {{ comment_form }}
+        </div>
+        <div>
+          {% for cmt in post.get_comments() %}
+            {% include "comment.twig" with {comment:cmt} %}
+          {% endfor %}
+        </div>
+
+      </section>
+
+    </article>
+  </div> <!-- /content-wrapper -->
+
+{% endblock %}

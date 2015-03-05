@@ -1,5 +1,5 @@
 require.config({
-  baseUrl: "src/",
+  baseUrl: "wp-content/themes/harvest/gemini/src/",
   paths: {
     "requireLib"                    : "bower_components/requirejs/require",
     "async"                         : "bower_components/requirejs-plugins/src/async",
@@ -8,6 +8,7 @@ require.config({
     "handlebars"                    : "bower_components/handlebars/handlebars.runtime",
     "fastclick"                     : "bower_components/fastclick/lib/fastclick",
     "hammerjs"                      : "bower_components/hammerjs/hammer",
+    "mediaelement"                  : "bower_components/mediaelement/build/mediaelement-and-player",
     "jquery.boiler"                 : "bower_components/jquery-boiler/jquery.boiler",
     "jquery.hammer"                 : "bower_components/jquery-hammerjs/jquery.hammer",
     "jquery.placeholder"            : "bower_components/jquery-placeholder/jquery.placeholder",
@@ -46,5 +47,15 @@ require.config({
 });
 
 require(['gemini'], function (G) {
+  require(['mediaelement'], function(){
+    $('video, audio').mediaelementplayer({
 
+    defaultVideoWidth: -1,
+
+    videoVolume: 'horizontal',
+    // features to show
+    features: ['playpause', 'stop', 'loop','current','progress','duration', 'volume'],
+
+});
+  });
 });

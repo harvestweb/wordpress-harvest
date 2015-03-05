@@ -1,4 +1,9 @@
+$gemini-base: (
+  background-color: #EEE,
+);
+
 $gemini-use: (
   grid: true,
   nav: true,
+  link-complex: true,
 );

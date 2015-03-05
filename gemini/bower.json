@@ -1,6 +1,8 @@
 {
   "name": "Gemini Boilerplate",
   "dependencies": {
-    "gemini": "latest"
+    "gemini": "latest",
+    "mediaelement": "~2.16.3",
+    "mediaelement-skin": "0.1.0"
   }
 }

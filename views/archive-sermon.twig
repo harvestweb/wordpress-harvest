@@ -1,0 +1,15 @@
+{% extends "base.twig" %}
+
+{% block content %}
+
+  {% for series in series_group %}
+    <a href="{{series.link}}" class="link-complex">
+      <div class="hgroup">
+        <h3 class="hN link-complex__target">{{ series.name }}</h3>
+        <h5 class="hN">{{ series.description }}</h5>
+      </div>
+      <img src="{{series.graphic.url}}" alt="series.name Graphic">
+    </a>
+  {% endfor %}
+
+{% endblock %}
