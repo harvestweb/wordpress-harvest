@@ -40,6 +40,14 @@ function harvest_register_required_plugins() {
       'version'            => '4.3.9',
       'force_activation'   => true,
       'force_deactivation' => false,
+    ),
+    array(
+      'name'               => 'The Events Calendar',
+      'slug'               => 'the-events-calendar',
+      'required'           => true,
+      'version'            => '3.9.1',
+      'force_activation'   => true,
+      'force_deactivation' => false,
     )
   );
 
