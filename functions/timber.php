@@ -13,6 +13,19 @@ if (!class_exists('Timber')){
   return;
 }
 
+class MyUser extends TimberUser {
+
+  function __construct($uid = false) {
+    parent::__construct($uid);
+    $this->profileUrl = $this->get_profileUrl();
+  }
+
+  function get_profileUrl() {
+    return get_admin_url();
+  }
+
+}
+
 class MySite extends TimberSite {
 
   function __construct(){
@@ -39,12 +52,15 @@ class MySite extends TimberSite {
   }
 
   function add_to_context($context){
-    $context['foo'] = 'bar';
-    $context['stuff'] = 'I am a value set in your functions.php file';
-    $context['notes'] = 'These values are available everytime you call Timber::get_context();';
+    /**
+     * Context
+     */
     $context['menu'] = new TimberMenu();
     $context['short_menu'] = new TimberMenu('Short');
+    $context['user'] = new MyUser();
+
     $context['site'] = $this;
+
     return $context;
   }
 
