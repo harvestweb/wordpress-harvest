@@ -4,12 +4,5 @@
   </div>
 </footer>
 
-{% if environment() == 'development' %}
-
-  <script data-main="{{site.theme.path}}/gemini/src/js/script" src="{{site.theme.link}}/gemini/src/bower_components/requirejs/require.js"></script>
-
-{% else %}
-
-  <script src="{{site.theme.link}}/gemini/dist/js/script.js"></script>
-
-{% endif %}
+<script src="{{site.theme.link}}/dist/js/main.js"></script>
+<script src="{{site.theme.link}}/dist/js/pages/index.js"></script>
